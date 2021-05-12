@@ -30,6 +30,15 @@ def add_card():
   else:
     return render_template("add_card.html")
 
+@app.route("remove_card/<int:index>", methods=["GET", "POST"])
+def remove_card(index):
+  try:
+    if request.method == "GET":
+      card = db[index]
+      return render_template("remove_card.html", card=card)
+  except IndexError:
+    abort(404)
+
 @app.route("/api/card/")
 def api_card_list():
   return jsonify(db)
