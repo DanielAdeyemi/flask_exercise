@@ -17,6 +17,10 @@ def card_view(index):
   except IndexError:
     abort(404)
 
+@app.route("/add_card")
+def add_card():
+  return render_template("add_card.html")
+
 @app.route("/api/card/")
 def api_card_list():
   return jsonify(db)
