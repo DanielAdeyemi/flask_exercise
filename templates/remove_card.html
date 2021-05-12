@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Delete card</title>
-</head>
-<body>
+{% extends "layout.html" %}
+
+{% block title %} Remove Card {% endblock %}
+
+{% block body %}
+
   <h1>Remove flash card</h1>
   Question: {{ card.question }} <br>
   Answer: {{ card.answer }}
@@ -16,5 +13,4 @@
     <button type="submit">Yes, remove it</button>
     <a href="{{ url_for('welcome') }}">No</a>
   </form>
-</body>
-</html>
+{%  endblock %}
